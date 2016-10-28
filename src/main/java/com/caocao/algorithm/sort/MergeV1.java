@@ -29,6 +29,7 @@ public class MergeV1 {
     static void sort(int data[], int start, int end) {
         if (start < end) {
             int mid = (start + end) / 2;
+            System.out.println("mid:" + mid);
             sort(data, start, mid);
             sort(data, mid + 1, end);
             merge(data, start, mid, end);

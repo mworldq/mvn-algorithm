@@ -1,6 +1,7 @@
 package com.caocao.algorithm.sort;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * Created by m on 16-10-17.
@@ -20,10 +21,9 @@ public class QuickV3 {
         System.out.println(Arrays.toString(a));
         quickSort(a, 0, a.length-1);
         System.out.println(Arrays.toString(a));
-
     }
 
-    static void quickSort(int[] a, int l, int r){
+    static void quickSort (int[] a, int l, int r){
         int i = l, j=r, x = a[i];
         if(i < j) {
             while (i <= j) {
