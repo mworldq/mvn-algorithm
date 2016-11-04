@@ -32,6 +32,8 @@ object SMapOP {
       println("key:" + i + ", value:" + m.getOrElse(i, -1))
     }
 
+//    m.toList.sortWith(((s1, i1), (s2, i2)) => i1 > i2)
+
   }
 
 }
