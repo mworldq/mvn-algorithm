@@ -11,6 +11,8 @@ object T1_S {
 
   val root: TireNode = new TireNode()
 
+  var productIdMap: Map[String, Int] = Map();
+
   def main(args: Array[String]): Unit = {
     readFile("./src/main/resources/order_ids.txt")
     iterator()
@@ -48,6 +50,7 @@ object T1_S {
   def iteratorTree(tn: TireNode, tmp: StringBuilder): Unit = {
     if (tn.terminal) {
       println("productId:" + tmp.toString() + ", count:" + tn.count)
+      productIdMap += (tmp.toString() -> tn.count)
       if (tn.children.isEmpty) {
         return
       }
@@ -59,7 +62,9 @@ object T1_S {
   }
 
   def getTopK(): Unit = {
-
+    println(productIdMap.toList.sortBy(_._2).reverse)
+    val topK = productIdMap.toList.sortBy(_._2).reverse.take(2)
+    println("topK = " + topK)
   }
 
   class TireNode {

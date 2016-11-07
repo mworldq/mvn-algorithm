@@ -7,7 +7,7 @@ object SMapOP {
   def main(args: Array[String]): Unit = {
     println("hello Map")
 
-    var m = Map[String, Int]()
+    var m: Map[String, Int] = Map[String, Int]()
     //    var A: Map[String, Int] = Map()
     m += ("father" -> 35)
     m += ("mother" -> 34)
@@ -32,7 +32,8 @@ object SMapOP {
       println("key:" + i + ", value:" + m.getOrElse(i, -1))
     }
 
-//    m.toList.sortWith(((s1, i1), (s2, i2)) => i1 > i2)
+    //    m.toList.sortWith(((s1:String, i1:Int), (s2:String, i2:Int)) => i1 > i2)
+    println(m.toList.sortBy(_._2).reverse)
 
   }
 
